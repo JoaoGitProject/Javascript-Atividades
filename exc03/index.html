@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Velocidade</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Teste de Velocidade</h1>
+            <br>
+            <h2>Primeiro carro</h2>
+            <label for="nome1">Nome:</label>
+            <input type="text" id="nome1">
+            <br><br>
+            <label for="Velocidade1">Velocidade:</label>
+            <input type="text" id="Velocidade1">
+            <br><br>
+            <h2>Segundo carro</h2>
+            <label for="nome2">Nome:</label>
+            <input type="text" id="nome2">
+            <br><br>
+            <label for="Velocidade2">Velocidade:</label>
+            <input type="text" id="Velocidade2">
+            <br><br>
+            <button type="submit" id="Enviar">Enviar</button>
+        </section>
+        
+        <section>
+            <script>
+                document.getElementById("Enviar").addEventListener("click", function() {
+                    const nome1 = document.getElementById("nome1").value;
+                    const velo1 = parseFloat(document.getElementById("Velocidade1").value);
+                    const nome2 = document.getElementById("nome2").value;
+                    const velo2 = parseFloat(document.getElementById("Velocidade2").value);
+
+                    if (velo1 > velo2) {
+                        alert(`O ${nome1} é mais rápido.`);
+                    } else if (velo2 > velo1) {
+                        alert(`O ${nome2} é mais rápido.`);
+                    } else {
+                        alert(`A velocidade é a mesma.`);
+                    }
+                });
+            </script>
+        </section>
+    </main>
+</body>
+</html>
