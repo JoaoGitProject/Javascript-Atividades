@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Batalha entre players</h1>
+        <h3>Atacante VS Defensor</h3>
+        <hr>
+    </header>
+
+    <section>
+        <main>
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">ATACANTE</p>
+            <label for="atacante">Nome:</label>
+            <input type="text" id="atacante">
+            <br><br>
+            <label for="poderAtacante">Poder de Ataque:</label>
+            <input type="text" id="poderAtacante">
+            <hr>
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">DEFENSOR</p>
+            <label for="defensorNome">Nome:</label>
+            <input type="text" id="defensorNome">
+            <br><br>
+            <label for="vida">Pontos de Vida:</label>
+            <input type="text" id="vida">
+            <br><br>
+            <label for="poderDefensor">Poder de Defesa:</label>
+            <input type="text" id="poderDefensor">
+            <br><br>
+            <label for="escudo">Escudo:</label>
+            <input type="text" id="escudo">
+            <BR></BR>
+            <button id="batalhar">BATALHAR!</button>
+            <script>
+
+                
+                document.getElementById("batalhar").addEventListener("click", function(){
+                    console.log("chamando")
+                    const atacante = document.getElementById("atacante").value;
+                    const poderAtacante = parseFloat(document.getElementById("poderAtacante").value);
+                    const vida = parseFloat(document.getElementById("vida").value);
+                    const nomeDefensor = document.getElementById("defensorNome").value;
+                    const poderDefesa = parseFloat(document.getElementById("poderDefensor").value);
+                    const escudo = parseFloat(document.getElementById("escudo").value);
+                    const resultado = (poderAtacante - poderDefesa) / 
+                    2;
+
+                    if (poderAtacante > poderDefesa){
+                        if (escudo > 0){
+                            alert(`O dano causado foi de: ${resultado}`)
+                        } else {
+                            console.log(poderAtacante - poderDefesa)
+                             alert(`O dano causado foi de: ${poderAtacante - poderDefesa}`)
+                        }
+                    }else {
+                        alert(`Dano causado foi 0`)
+                    }              
+                })
+            </script>
+        </main>
+    </section>
+</body>
+</html>
